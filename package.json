@@ -1,0 +1,24 @@
+{
+  "name": "raspi-tv-remote",
+  "version": "1.0.0",
+  "description": "Turn your Raspberry Pi into an IR remote control",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fbradley8/raspi-tv-remote.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fbradley8/raspi-tv-remote/issues"
+  },
+  "homepage": "https://github.com/fbradley8/raspi-tv-remote#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "lirc_node": "0.0.4"
+  }
+}
