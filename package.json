@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/fbradley8/raspi-tv-remote.git"
   },
-  "author": "",
+  "author": "fbradley8",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/fbradley8/raspi-tv-remote/issues"
