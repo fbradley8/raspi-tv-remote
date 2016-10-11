@@ -1,195 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>TV Remote</title>
-    <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/material-icons.css">
-    <link rel="stylesheet" href="mdl/material.min.css">
-    <link rel="icon" type="image/png" href="icons/icon72.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="jquery-2.2.2.min.js"></script>
-    <script src="mdl/material.min.js"></script>
-    <style>
-        body {
-            background-color: #ebf1f5;
-        }
-        key {
-            margin: 20px 25px;
-            text-align: center;
-            display: inline-block;
-            width: 75px;
-            position: relative;
-        }
-        button {
-            border: 1px solid #dadada;
-            border-radius: 50px!important;
-            height: 75px!important;
-            width: 75px!important;
-            display: block;
-            color: gray;
-            background: #fff!important;
-            font-weight: bold;
-            font-size: 18px;
-            padding-top: 4px;
-            box-shadow: 0 3px 5px #999999;
-            position: relative;
-            vertical-align: top;
-        }
-        label {
-            display: block;
-            margin-top: 10px;
-            font-size: 16px;
-            font-weight: bold;
-        }
-        .container {
-            width: 255px;
-            margin: auto auto;
-            color: gray;
-        }
-        .btn-rocker {
-            height: 220px!important;
-        }
-        button .top, button .bottom {
-            position: absolute;
-            height: 100px;
-            left: 0;
-            right: 0;
-            z-index: 1;
-        }
-        button .top i.material-icons, button .bottom i.material-icons {
-            left: 26px;
-            top: auto;
-        }
-        button .top {
-            top: 0px;
-        }
-        button .bottom {
-            bottom: 0px;
-        }
-        button .top i.material-icons {
-            top: 25px;   
-        }
-        button .bottom i.material-icons {
-            bottom: 0;   
-        }
-        
-        
-        #key_power {
-            color: #c9302c;
-        }
-        #key_mute {
-            color: darkgreen;
-        }
-        #key_channel .material-icons, #key_updown .material-icons {
-            font-size: 48px;
-        }
-        #key_volume .material-icons {
-            font-size: 38px;
-            left: 31px;
-        }
-        
-        .mdl-button--fab .mdl-button__ripple-container {
-            border-radius: 50px;
-        }
-    </style>
-  </head>
-  <body>
-    <div class="container" style="display: none;">
-        <div class="row">
-            <key>
-                <button id="key_power" href="key_power" clickable>
-                    <i class="material-icons">power_settings_new</i>
-                </button>
-                <label>Power</label>
-            </key>
-            <key>
-                <button id="key_mute" href="key_mute" clickable>
-                    <i class="material-icons">volume_off</i>
-                </button>
-                <label>Mute</label>
-            </key>
+    <head>
+        <title>TV Remote</title>
+        <link rel="manifest" href="manifest.json">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/material-icons.css">
+        <link rel="stylesheet" href="mdl/material.min.css">
+        <link rel="icon" type="image/png" href="icons/icon72.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="jquery-2.2.2.min.js"></script>
+        <script src="mdl/material.min.js"></script>
+        <style>
+            body {
+                background-color: #ebf1f5;
+            }
+            key {
+                margin: 20px 25px;
+                text-align: center;
+                display: inline-block;
+                width: 75px;
+                position: relative;
+            }
+            button {
+                border: 1px solid #dadada;
+                border-radius: 50px!important;
+                height: 75px!important;
+                width: 75px!important;
+                display: block;
+                color: gray;
+                background: #fff!important;
+                font-weight: bold;
+                font-size: 18px;
+                padding-top: 4px;
+                box-shadow: 0 3px 5px #999999;
+                position: relative;
+                vertical-align: top;
+            }
+            label {
+                display: block;
+                margin-top: 10px;
+                font-size: 16px;
+                font-weight: bold;
+            }
+            .container {
+                width: 255px;
+                margin: auto auto;
+                color: gray;
+            }
+            .btn-rocker {
+                height: 220px!important;
+            }
+            button .top, button .bottom {
+                position: absolute;
+                height: 100px;
+                left: 0;
+                right: 0;
+                z-index: 1;
+            }
+            button .top i.material-icons, button .bottom i.material-icons {
+                left: 26px;
+                top: auto;
+            }
+            button .top {
+                top: 0px;
+            }
+            button .bottom {
+                bottom: 0px;
+            }
+            button .top i.material-icons {
+                top: 25px;
+            }
+            button .bottom i.material-icons {
+                bottom: 0;
+            }
+
+            #key_power {
+                color: #c9302c;
+            }
+            #key_mute {
+                color: darkgreen;
+            }
+            #key_channel .material-icons, #key_updown .material-icons {
+                font-size: 48px;
+            }
+            #key_volume .material-icons {
+                font-size: 38px;
+                left: 31px;
+            }
+
+            .mdl-button--fab .mdl-button__ripple-container {
+                border-radius: 50px;
+            }
+        </style>
+    </head>
+    <body>  
+        <div class="container">
+            <div class="row">
+                <key>
+                    <button id="key_power" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" clickable>
+                        <i class="material-icons">power_settings_new</i>
+                    </button>
+                    <label>Power</label>
+                </key>
+                <key>
+                    <button id="key_mute" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" clickable>
+                        <i class="material-icons">volume_off</i>
+                    </button>
+                    <label>Mute</label>
+                </key>
+            </div>
+            <div class="row">
+                <key>
+                    <button id="key_channel" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect btn-rocker">
+                        <span id="key_channelup" class="top" clickable><i class="material-icons">keyboard_arrow_up</i></span>
+                        CH
+                        <span id="key_channeldown" class="bottom" clickable><i class="material-icons">keyboard_arrow_down</i></span>
+                    </button>
+                </key>
+                <key>
+                    <button id="key_volume" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect btn-rocker">
+                        <span id="key_volumeup" class="top" clickable><i class="material-icons">add</i></span>
+                        VOL
+                        <span id="key_volumedown" class="bottom" clickable><i class="material-icons">remove</i></span>
+                    </button>
+                </key>
+            </div>
+            <div class="row">
+                <key>
+                    <button id="key_video" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" clickable>
+                        <i class="material-icons">settings_input_hdmi</i>
+                    </button>
+                    <label>Source</label>
+                </key>
+                <key style="float: right;">
+                    <button id="key_updown" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect btn-rocker">
+                        <span id="key_up" class="top" clickable=""><i class="material-icons">keyboard_arrow_up</i></span>
+                        NAV
+                        <span id="key_down" class="bottom" clickable=""><i class="material-icons">keyboard_arrow_down</i></span>
+                    </button>
+                </key>
+                <key>
+                    <button id="key_ok" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" clickable>
+                        <i class="material-icons">adjust</i>
+                    </button>
+                    <label>OK</label>
+                </key>
+            </div>
         </div>
-        <div class="row">
-            <key>
-                <button id="key_channel" class="btn-rocker">
-                    <span id="key_channelup" class="top" clickable><i class="material-icons">keyboard_arrow_up</i></span>
-                    CH
-                    <span id="key_channeldown" class="bottom" clickable><i class="material-icons">keyboard_arrow_down</i></span>
-                </button>
-            </key>
-            <key>
-                <button id="key_volume" class="btn-rocker">
-                    <span id="key_volumeup" class="top" clickable><i class="material-icons">add</i></span>
-                    VOL
-                    <span id="key_volumedown" class="bottom" clickable><i class="material-icons">remove</i></span>
-                </button>
-            </key>
-        </div>
-        
-    </div>
-      
-      
-    <div class="container">
-        <div class="row">
-            <key>
-                <button id="key_power" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" clickable>
-                  <i class="material-icons">power_settings_new</i>
-                </button>
-                <label>Power</label>
-            </key>
-            <key>
-                <button id="key_mute" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" clickable>
-                    <i class="material-icons">volume_off</i>
-                </button>
-                <label>Mute</label>
-            </key>
-        </div>
-        <div class="row">
-            <key>
-                <button id="key_channel" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect btn-rocker">
-                    <span id="key_channelup" class="top" clickable><i class="material-icons">keyboard_arrow_up</i></span>
-                    CH
-                    <span id="key_channeldown" class="bottom" clickable><i class="material-icons">keyboard_arrow_down</i></span>
-                </button>
-            </key>
-            <key>
-                <button id="key_volume" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect btn-rocker">
-                    <span id="key_volumeup" class="top" clickable><i class="material-icons">add</i></span>
-                    VOL
-                    <span id="key_volumedown" class="bottom" clickable><i class="material-icons">remove</i></span>
-                </button>
-            </key>
-        </div>
-	<div class="row">
-            <key>
-                <button id="key_video" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" clickable>
-                    <i class="material-icons">settings_input_hdmi</i>
-		</button>
-                <label>Source</label>
-            </key>
-            <key style="float: right;">
-                <button id="key_updown" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect btn-rocker">
-                    <span id="key_up" class="top" clickable=""><i class="material-icons">keyboard_arrow_up</i></span>
-                    NAV
-                    <span id="key_down" class="bottom" clickable=""><i class="material-icons">keyboard_arrow_down</i></span>
-                </button>
-            </key>
-            <key>
-                <button id="key_ok" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" clickable>
-                    <i class="material-icons">adjust</i>
-                </button>
-                <label>OK</label>
-            </key>
-	</div>        
-    </div>
-    <script>
-        $('*[clickable]').each(function(index, element) {
-            var self = $(element);
-            self.click(function(e) {
-                 $.ajax('/press/' + self.attr('id'))
+        <script>
+            $('*[clickable]').each(function(index, element) {
+                var self = $(element);
+                self.click(function(e) {
+                    $.ajax('/press/' + self.attr('id'))
+                });
             });
-        });
-    </script>
-  </body>
+        </script>
+    </body>
 </html>
