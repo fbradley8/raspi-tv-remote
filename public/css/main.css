@@ -1,0 +1,91 @@
+body {
+    background-color: #242424;
+}
+
+.container {
+    color: gray;
+    margin: auto auto;
+    margin-bottom: 25px;
+    width: 230px;
+}
+.row {
+    margin-right: 25px;
+}
+.mixed.row > key:not(.rocker) > button {
+    height: 65px!important;
+}
+
+key {
+    margin: 20px 0 20px 25px;
+    text-align: center;
+    display: inline-block;
+    width: 75px;
+    position: relative;
+}
+
+button {
+    border-radius: 0px!important;
+    height: 50px!important;
+    width: 75px!important;
+    color: white!important;
+    background: #596065!important;
+    box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.75)!important;
+}
+.rocker button {
+    height: 170px!important;
+}
+
+button .top, button .bottom {
+    position: absolute;
+    height: 85px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+button .top i.material-icons, button .bottom i.material-icons {
+    left: 26px;
+    top: auto;
+}
+button .top {
+    top: 0px;
+}
+button .bottom {
+    bottom: 0px;
+}
+button .top i.material-icons {
+    top: 25px;
+}
+button .bottom i.material-icons {
+    bottom: 0;
+}
+
+label {
+    display: block;
+    position: absolute;
+    width: 100%;
+    bottom: -25px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.right {
+    float: right;
+}
+.left {
+    float: left;
+}
+
+#key_power {
+    background-color: rgba(255, 0, 0, 0.5)!important;
+}
+#key_channel .material-icons, #key_updown .material-icons {
+    font-size: 48px;
+}
+#key_volume .material-icons {
+    font-size: 38px;
+    left: 31px;
+}
+
+.mdl-button--fab .mdl-button__ripple-container {
+    border-radius: 0;
+}
