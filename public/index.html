@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <title>TV Remote</title>
-        <link rel="manifest" href="manifest.json">
+        <link rel="manifest" href="manifest-webapp.json">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/material-icons.css">
         <link rel="stylesheet" href="mdl/material.min.css">
@@ -10,6 +10,7 @@
         <link rel="icon" type="image/png" href="icons/icon72.png">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="jquery-2.2.2.min.js"></script>
+        <script src="js/app.js"></script>
         <script src="mdl/material.min.js"></script>
     </head>
     <body>
@@ -66,13 +67,5 @@
                 </key>
             </div>
         </div>
-        <script>
-            $('*[clickable]').each(function(index, element) {
-                var self = $(element);
-                self.click(function(e) {
-                    $.ajax('/press/' + self.attr('id'))
-                });
-            });
-        </script>
     </body>
 </html>
