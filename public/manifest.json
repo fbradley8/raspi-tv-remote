@@ -3,7 +3,7 @@
 
   "name": "TV Remote",
   "description": "Chrome extension for github.com/fbradley8/raspi-tv-remote",
-  "version": "1.0",
+  "version": "1.0.2",
 
   "icons": {
     "48": "icons/icon48-alt.png"
